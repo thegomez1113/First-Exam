@@ -1,0 +1,67 @@
+﻿@model First_Exam.Models.TicketViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="CheckTicket">
+    <div class="col-md-4 offset-4">
+        <br />
+        <br />
+        <i class="fa-solid fa-arrow-left text-dark"></i>
+        <h3 class="text-center">Validar boleto</h3>
+        <form asp-action="CheckTicket">
+            <div asp-validation-summary="ModelOnly" class="text-danger mt-4"></div>
+
+            <div class="form-group">
+                
+                <input asp-for="Id" class="form-control" placeholder="Número de boleto"/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-md-10 offset-4" >
+                <input type="submit" value="Validar" class="link-login2" />
+                <a asp-action="CheckTicket" class="link-login2">Regresar</a>
+            </div>
+        </form>
+        </br>
+        </br>
+        <div class="text-center">
+            <h3 @if (TempData["Message"] != null)
+                {
+                    <span class="text-success"> @Html.Encode(TempData["Message"])</span>
+                }
+            </h3>
+            <hr />
+            @if (TempData["Name"] != null)
+            {
+               
+                   <h4><b>Datos:</b></h4>
+                   <hr />
+                    
+                    <h6><b>Nombre: <span class="text-dark"> @Html.Encode(TempData["Name"])</span</b></h6>
+                
+            }
+            <br />
+            @if (TempData["Document"] != null)
+            {
+                <h6><b>Documento: <span class="text-dark"> @Html.Encode(TempData["Document"])</span></b></h6>
+            }
+            <br />
+            @if (TempData["Date"] != null)
+            {
+                <h6><b>Fecha: <span class="text-dark"> @Html.Encode(TempData["Date"])</span></b></h6>
+            }
+            @if (TempData["Entrance"] != null)
+            {
+                <h6><b>Entrada: <span class="text-dark"> @Html.Encode(TempData["Entrance"])</span></b></h6>
+            }
+        </div>
+    </div>
+</div>
+    <span asp-validation-for="Id" class="text-danger"></span>
+
+    @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+    }

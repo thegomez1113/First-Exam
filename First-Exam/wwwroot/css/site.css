@@ -1,0 +1,59 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.CheckTicket{
+    background-color: #00ffff;
+    border-radius:30px;
+}
+.link-login2 {
+    background-color: #252628;
+    padding: 15px 20px;
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+    .link-login2:hover {
+        
+        color: white;
+        background-color: #B19758;
+        transition: ease-in-out .2s;
+    }
+.link-login3 {
+    margin-left:50%;
+    background-color: #252628;
+    padding: 15px 20px;
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+    .link-login3:hover {
+        color: white;
+        background-color: #B19758;
+        transition: ease-in-out .2s;
+    }
