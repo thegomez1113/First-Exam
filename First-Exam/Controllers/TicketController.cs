@@ -5,7 +5,7 @@ using First_Exam.Data.Entities;
 using First_Exam.Helpers;
 using First_Exam.Models;
 
-namespace ParcialZ.Controllers
+namespace First_Exam.Controllers
 {
     public class TicketController : Controller
     {
@@ -40,7 +40,7 @@ namespace ParcialZ.Controllers
             Ticket ticket = await _context.Tickets
                 .FirstOrDefaultAsync(t => t.Id == id);
 
-            if (id <= 0 || id >= 5002)
+            if (id <= 0 || id >= 5000)
             {
                 TempData["Message"] = "Error de boleta, no existe";
 
@@ -87,7 +87,7 @@ namespace ParcialZ.Controllers
                 Document = ticket.Document,
                 Id = ticket.Id,
                 Name = ticket.Name,
-                DateTime = (DateTime)ticket.DateTime,
+                DateTime = DateTime.Now,
                 WasUsed = true,
                 Entrances = await _combosHelper.GetComboEntrancesAsync(),
             };
